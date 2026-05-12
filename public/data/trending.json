@@ -1,256 +1,370 @@
 {
-  "weekly": [
+  "daily": [
     {
       "rank": 1,
-      "name": "anthropics/financial-services",
-      "link": "https://github.com/anthropics/financial-services",
-      "description": "",
+      "name": "antirez/ds4",
+      "link": "https://github.com/antirez/ds4",
+      "description": "DeepSeek 4 Flash local inference engine for Metal and CUDA",
       "keywords": [
-        "Python"
+        "C"
       ],
-      "totalStars": "16948",
-      "growth": "3077",
-      "growthValue": 3077
+      "totalStars": "7965",
+      "growth": "0",
+      "growthValue": 0
     },
     {
       "rank": 2,
-      "name": "bytedance/UI-TARS-desktop",
-      "link": "https://github.com/bytedance/UI-TARS-desktop",
-      "description": "The Open-Source Multimodal AI Agent Stack: Connecting Cutting-Edge AI Models and Agent Infra",
+      "name": "V4bel/dirtyfrag",
+      "link": "https://github.com/V4bel/dirtyfrag",
+      "description": "",
       "keywords": [
-        "TypeScript"
+        "C"
       ],
-      "totalStars": "31238",
-      "growth": "549",
-      "growthValue": 549
+      "totalStars": "4298",
+      "growth": "0",
+      "growthValue": 0
     },
     {
       "rank": 3,
-      "name": "rohitg00/agentmemory",
-      "link": "https://github.com/rohitg00/agentmemory",
-      "description": "#1 Persistent memory for AI coding agents based on real-world benchmarks",
+      "name": "vercel-labs/zero-native",
+      "link": "https://github.com/vercel-labs/zero-native",
+      "description": "Build desktop + mobile apps with Zig and web UI",
       "keywords": [
-        "TypeScript"
+        "Zig"
       ],
-      "totalStars": "3228",
-      "growth": "518",
-      "growthValue": 518
+      "totalStars": "2851",
+      "growth": "0",
+      "growthValue": 0
     },
     {
       "rank": 4,
-      "name": "datawhalechina/hello-agents",
-      "link": "https://github.com/datawhalechina/hello-agents",
-      "description": "📚 《从零开始构建智能体》——从零开始的智能体原理与实践教程",
+      "name": "strukto-ai/mirage",
+      "link": "https://github.com/strukto-ai/mirage",
+      "description": "A Unified Virtual Filesystem For AI Agents",
       "keywords": [
-        "Python"
+        "TypeScript"
       ],
-      "totalStars": "45574",
-      "growth": "1162",
-      "growthValue": 1162
+      "totalStars": "2039",
+      "growth": "0",
+      "growthValue": 0
     },
     {
       "rank": 5,
-      "name": "datawhalechina/easy-vibe",
-      "link": "https://github.com/datawhalechina/easy-vibe",
-      "description": "💻 vibe coding 2026 | Your first modern programming course for beginners to master step by step.",
+      "name": "yaojingang/yao-open-prompts",
+      "link": "https://github.com/yaojingang/yao-open-prompts",
+      "description": "Yao Open Prompts: 中文 AI 提示词库",
       "keywords": [
-        "JavaScript"
+        "Python"
       ],
-      "totalStars": "8363",
-      "growth": "294",
-      "growthValue": 294
+      "totalStars": "1818",
+      "growth": "0",
+      "growthValue": 0
     },
     {
       "rank": 6,
-      "name": "rowboatlabs/rowboat",
-      "link": "https://github.com/rowboatlabs/rowboat",
-      "description": "Open-source AI coworker, with memory",
+      "name": "aattaran/deepclaude",
+      "link": "https://github.com/aattaran/deepclaude",
+      "description": "Use Claude Code autonomous agent loop with DeepSeek V4 Pro, OpenRouter, or any Anthropic-compatible API",
       "keywords": [
-        "TypeScript"
+        "JavaScript"
       ],
-      "totalStars": "13645",
-      "growth": "144",
-      "growthValue": 144
+      "totalStars": "1796",
+      "growth": "0",
+      "growthValue": 0
     },
     {
       "rank": 7,
-      "name": "ChromeDevTools/chrome-devtools-mcp",
-      "link": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
-      "description": "Chrome DevTools for coding agents",
+      "name": "XBuilderLAB/cheat-on-content",
+      "link": "https://github.com/XBuilderLAB/cheat-on-content",
+      "description": "A workflow that turns every post into a calibrated experiment",
       "keywords": [
-        "TypeScript"
+        "Shell"
       ],
-      "totalStars": "38704",
-      "growth": "159",
-      "growthValue": 159
+      "totalStars": "1790",
+      "growth": "0",
+      "growthValue": 0
     },
     {
       "rank": 8,
-      "name": "masterking32/MasterDnsVPN",
-      "link": "https://github.com/masterking32/MasterDnsVPN",
-      "description": "Advanced DNS tunneling VPN for censorship bypass, optimized beyond DNSTT and SlipStream with low-ove",
+      "name": "huangserva/3DCellForge",
+      "link": "https://github.com/huangserva/3DCellForge",
+      "description": "AI-powered interactive 3D cell generation and exploration studio",
       "keywords": [
-        "Go"
+        "JavaScript"
       ],
-      "totalStars": "2306",
-      "growth": "595",
-      "growthValue": 595
+      "totalStars": "1680",
+      "growth": "0",
+      "growthValue": 0
     },
     {
       "rank": 9,
-      "name": "playcanvas/supersplat",
-      "link": "https://github.com/playcanvas/supersplat",
-      "description": "3D Gaussian Splat Editor",
+      "name": "crafter-station/petdex",
+      "link": "https://github.com/crafter-station/petdex",
+      "description": "The public gallery of animated pet for Codex, Claude Code, OpenCode and Gemini CLI",
       "keywords": [
         "TypeScript"
       ],
-      "totalStars": "6103",
-      "growth": "513",
-      "growthValue": 513
+      "totalStars": "1538",
+      "growth": "0",
+      "growthValue": 0
     },
     {
       "rank": 10,
-      "name": "Lordog/dive-into-llms",
-      "link": "https://github.com/Lordog/dive-into-llms",
-      "description": "《动手学大模型Dive into LLMs》系列编程实践教程",
+      "name": "BigPizzaV3/CodexPlusPlus",
+      "link": "https://github.com/BigPizzaV3/CodexPlusPlus",
+      "description": "An enhanced tool for CodexApp",
       "keywords": [
-        "Jupyter Notebook"
+        "Python"
       ],
-      "totalStars": "36437",
-      "growth": "189",
-      "growthValue": 189
+      "totalStars": "1466",
+      "growth": "0",
+      "growthValue": 0
+    }
+  ],
+  "weekly": [
+    {
+      "rank": 1,
+      "name": "antirez/ds4",
+      "link": "https://github.com/antirez/ds4",
+      "description": "DeepSeek 4 Flash local inference engine for Metal and CUDA",
+      "keywords": [
+        "C"
+      ],
+      "totalStars": "7965",
+      "growth": "0",
+      "growthValue": 0
+    },
+    {
+      "rank": 2,
+      "name": "V4bel/dirtyfrag",
+      "link": "https://github.com/V4bel/dirtyfrag",
+      "description": "",
+      "keywords": [
+        "C"
+      ],
+      "totalStars": "4298",
+      "growth": "0",
+      "growthValue": 0
+    },
+    {
+      "rank": 3,
+      "name": "vercel-labs/zero-native",
+      "link": "https://github.com/vercel-labs/zero-native",
+      "description": "Build desktop + mobile apps with Zig and web UI",
+      "keywords": [
+        "Zig"
+      ],
+      "totalStars": "2851",
+      "growth": "0",
+      "growthValue": 0
+    },
+    {
+      "rank": 4,
+      "name": "strukto-ai/mirage",
+      "link": "https://github.com/strukto-ai/mirage",
+      "description": "A Unified Virtual Filesystem For AI Agents",
+      "keywords": [
+        "TypeScript"
+      ],
+      "totalStars": "2039",
+      "growth": "0",
+      "growthValue": 0
+    },
+    {
+      "rank": 5,
+      "name": "yaojingang/yao-open-prompts",
+      "link": "https://github.com/yaojingang/yao-open-prompts",
+      "description": "Yao Open Prompts: 中文 AI 提示词库",
+      "keywords": [
+        "Python"
+      ],
+      "totalStars": "1818",
+      "growth": "0",
+      "growthValue": 0
+    },
+    {
+      "rank": 6,
+      "name": "aattaran/deepclaude",
+      "link": "https://github.com/aattaran/deepclaude",
+      "description": "Use Claude Code autonomous agent loop with DeepSeek V4 Pro, OpenRouter, or any Anthropic-compatible API",
+      "keywords": [
+        "JavaScript"
+      ],
+      "totalStars": "1796",
+      "growth": "0",
+      "growthValue": 0
+    },
+    {
+      "rank": 7,
+      "name": "XBuilderLAB/cheat-on-content",
+      "link": "https://github.com/XBuilderLAB/cheat-on-content",
+      "description": "A workflow that turns every post into a calibrated experiment",
+      "keywords": [
+        "Shell"
+      ],
+      "totalStars": "1790",
+      "growth": "0",
+      "growthValue": 0
+    },
+    {
+      "rank": 8,
+      "name": "huangserva/3DCellForge",
+      "link": "https://github.com/huangserva/3DCellForge",
+      "description": "AI-powered interactive 3D cell generation and exploration studio",
+      "keywords": [
+        "JavaScript"
+      ],
+      "totalStars": "1680",
+      "growth": "0",
+      "growthValue": 0
+    },
+    {
+      "rank": 9,
+      "name": "crafter-station/petdex",
+      "link": "https://github.com/crafter-station/petdex",
+      "description": "The public gallery of animated pet for Codex, Claude Code, OpenCode and Gemini CLI",
+      "keywords": [
+        "TypeScript"
+      ],
+      "totalStars": "1538",
+      "growth": "0",
+      "growthValue": 0
+    },
+    {
+      "rank": 10,
+      "name": "BigPizzaV3/CodexPlusPlus",
+      "link": "https://github.com/BigPizzaV3/CodexPlusPlus",
+      "description": "An enhanced tool for CodexApp",
+      "keywords": [
+        "Python"
+      ],
+      "totalStars": "1466",
+      "growth": "0",
+      "growthValue": 0
     }
   ],
   "monthly": [
     {
       "rank": 1,
-      "name": "forrestchang/andrej-karpathy-skills",
-      "link": "https://github.com/forrestchang/andrej-karpathy-skills",
-      "description": "A single CLAUDE.md file to improve Claude",
+      "name": "antirez/ds4",
+      "link": "https://github.com/antirez/ds4",
+      "description": "DeepSeek 4 Flash local inference engine for Metal and CUDA",
       "keywords": [
-        "Claude"
+        "C"
       ],
-      "totalStars": "121750",
-      "growth": "112013",
-      "growthValue": 112013
+      "totalStars": "7965",
+      "growth": "0",
+      "growthValue": 0
     },
     {
       "rank": 2,
-      "name": "mattpocock/skills",
-      "link": "https://github.com/mattpocock/skills",
-      "description": "Skills for Real Engineers",
+      "name": "V4bel/dirtyfrag",
+      "link": "https://github.com/V4bel/dirtyfrag",
+      "description": "",
       "keywords": [
-        "Claude",
-        "Shell"
+        "C"
       ],
-      "totalStars": "67502",
-      "growth": "53203",
-      "growthValue": 53203
+      "totalStars": "4298",
+      "growth": "0",
+      "growthValue": 0
     },
     {
       "rank": 3,
-      "name": "NousResearch/hermes-agent",
-      "link": "https://github.com/NousResearch/hermes-agent",
-      "description": "The agent that grows with you",
+      "name": "vercel-labs/zero-native",
+      "link": "https://github.com/vercel-labs/zero-native",
+      "description": "Build desktop + mobile apps with Zig and web UI",
       "keywords": [
-        "AI Agent",
-        "Python"
+        "Zig"
       ],
-      "totalStars": "140284",
-      "growth": "104052",
-      "growthValue": 104052
+      "totalStars": "2851",
+      "growth": "0",
+      "growthValue": 0
     },
     {
       "rank": 4,
-      "name": "Alishahryar1/free-claude-code",
-      "link": "https://github.com/Alishahryar1/free-claude-code",
-      "description": "Use claude-code for free in the terminal",
+      "name": "strukto-ai/mirage",
+      "link": "https://github.com/strukto-ai/mirage",
+      "description": "A Unified Virtual Filesystem For AI Agents",
       "keywords": [
-        "Claude",
-        "Python"
+        "TypeScript"
       ],
-      "totalStars": "23083",
-      "growth": "20993",
-      "growthValue": 20993
+      "totalStars": "2039",
+      "growth": "0",
+      "growthValue": 0
     },
     {
       "rank": 5,
-      "name": "multica-ai/multica",
-      "link": "https://github.com/multica-ai/multica",
-      "description": "The open-source managed agents platform",
+      "name": "yaojingang/yao-open-prompts",
+      "link": "https://github.com/yaojingang/yao-open-prompts",
+      "description": "Yao Open Prompts: 中文 AI 提示词库",
       "keywords": [
-        "AI Agent",
-        "TypeScript"
+        "Python"
       ],
-      "totalStars": "26485",
-      "growth": "23942",
-      "growthValue": 23942
+      "totalStars": "1818",
+      "growth": "0",
+      "growthValue": 0
     },
     {
       "rank": 6,
-      "name": "addyosmani/agent-skills",
-      "link": "https://github.com/addyosmani/agent-skills",
-      "description": "Production-grade engineering skills for AI coding",
+      "name": "aattaran/deepclaude",
+      "link": "https://github.com/aattaran/deepclaude",
+      "description": "Use Claude Code autonomous agent loop with DeepSeek V4 Pro, OpenRouter, or any Anthropic-compatible API",
       "keywords": [
-        "AI Agent",
-        "Shell"
+        "JavaScript"
       ],
-      "totalStars": "36879",
-      "growth": "25346",
-      "growthValue": 25346
+      "totalStars": "1796",
+      "growth": "0",
+      "growthValue": 0
     },
     {
       "rank": 7,
-      "name": "AIDC-AI/Pixelle-Video",
-      "link": "https://github.com/AIDC-AI/Pixelle-Video",
-      "description": "AI全自动短视频引擎",
+      "name": "XBuilderLAB/cheat-on-content",
+      "link": "https://github.com/XBuilderLAB/cheat-on-content",
+      "description": "A workflow that turns every post into a calibrated experiment",
       "keywords": [
-        "AI",
-        "Python"
+        "Shell"
       ],
-      "totalStars": "14042",
-      "growth": "10269",
-      "growthValue": 10269
+      "totalStars": "1790",
+      "growth": "0",
+      "growthValue": 0
     },
     {
       "rank": 8,
-      "name": "lsdefine/GenericAgent",
-      "link": "https://github.com/lsdefine/GenericAgent",
-      "description": "Self-evolving agent: grows skill tree",
+      "name": "huangserva/3DCellForge",
+      "link": "https://github.com/huangserva/3DCellForge",
+      "description": "AI-powered interactive 3D cell generation and exploration studio",
       "keywords": [
-        "AI Agent",
-        "Python"
+        "JavaScript"
       ],
-      "totalStars": "10221",
-      "growth": "8855",
-      "growthValue": 8855
+      "totalStars": "1680",
+      "growth": "0",
+      "growthValue": 0
     },
     {
       "rank": 9,
-      "name": "shiyu-coder/Kronos",
-      "link": "https://github.com/shiyu-coder/Kronos",
-      "description": "Kronos: A Foundation Model for Finance",
+      "name": "crafter-station/petdex",
+      "link": "https://github.com/crafter-station/petdex",
+      "description": "The public gallery of animated pet for Codex, Claude Code, OpenCode and Gemini CLI",
       "keywords": [
-        "Finance",
-        "Python"
+        "TypeScript"
       ],
-      "totalStars": "23747",
-      "growth": "12092",
-      "growthValue": 12092
+      "totalStars": "1538",
+      "growth": "0",
+      "growthValue": 0
     },
     {
       "rank": 10,
-      "name": "ComposioHQ/awesome-codex-skills",
-      "link": "https://github.com/ComposioHQ/awesome-codex-skills",
-      "description": "A curated list of practical Codex skills",
+      "name": "BigPizzaV3/CodexPlusPlus",
+      "link": "https://github.com/BigPizzaV3/CodexPlusPlus",
+      "description": "An enhanced tool for CodexApp",
       "keywords": [
         "Python"
       ],
-      "totalStars": "7754",
-      "growth": "6940",
-      "growthValue": 6940
+      "totalStars": "1466",
+      "growth": "0",
+      "growthValue": 0
     }
   ],
-  "lastUpdated": "2026-05-09 17:00",
-  "generatedAt": "2026-05-09T17:00:00"
+  "lastUpdated": "2026-05-13 00:46",
+  "generatedAt": "2026-05-13T00:46:30.495292"
 }
