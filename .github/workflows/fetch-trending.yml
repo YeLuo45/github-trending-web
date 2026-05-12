@@ -110,6 +110,7 @@ jobs:
               pass
 
           trending_data = {
+              'daily': projects,
               'weekly': projects,
               'monthly': existing_data.get('monthly', projects),
               'lastUpdated': datetime.now().strftime('%Y-%m-%d %H:%M'),
