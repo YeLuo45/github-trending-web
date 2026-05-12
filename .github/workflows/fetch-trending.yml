@@ -129,5 +129,17 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "GitHub Actions"
           git add public/data/trending.json
-          git diff --staged --quiet || git commit -m "chore: auto-update trending data $(date +'%Y-%m-%d')"
-          git push 2>&1 || echo "Push failed (may be no changes)"
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "chore: auto-update trending data $(date +'%Y-%m-%d')"
+          if ! git push; then
+            echo "ERROR: Git push failed. Trending data update was NOT published."
+            echo "Please check:"
+            echo "1. GitHub token permissions (Contents: write)"
+            echo "2. Branch protection rules"
+            echo "3. Network connectivity"
+            exit 1
+          fi
+          echo "Successfully pushed trending data update"
