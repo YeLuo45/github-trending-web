@@ -44,10 +44,24 @@ const SAMPLE_MONTHLY: TrendingProject[] = [
   { rank: 10, name: 'ComposioHQ/awesome-codex-skills', link: 'https://github.com/ComposioHQ/awesome-codex-skills', description: 'A curated list of practical Codex skills', keywords: ['Python'], totalStars: '7,754', growth: '6,940', growthValue: 6940 },
 ];
 
+const SAMPLE_DAILY: TrendingProject[] = [
+  { rank: 1, name: 'anthropics/financial-services', link: 'https://github.com/anthropics/financial-services', description: 'Anthropic\'s financial services reference implementation', keywords: ['Finance', 'Python'], totalStars: '16,687', growth: '987', growthValue: 987 },
+  { rank: 2, name: 'ruvnet/ruflo', link: 'https://github.com/ruvnet/ruflo', description: 'The leading agent orchestration platform for Claude', keywords: ['AI Agent', 'Claude', 'TypeScript'], totalStars: '47,379', growth: '1,542', growthValue: 1542 },
+  { rank: 3, name: 'TauricResearch/TradingAgents', link: 'https://github.com/TauricResearch/TradingAgents', description: 'TradingAgents: Multi-Agents LLM Financial Trading', keywords: ['AI Agent', 'Trading', 'Finance', 'Python'], totalStars: '72,239', growth: '2,103', growthValue: 2103 },
+  { rank: 4, name: 'docusealco/docuseal', link: 'https://github.com/docusealco/docuseal', description: 'Open source DocuSign alternative', keywords: ['Ruby'], totalStars: '15,995', growth: '623', growthValue: 623 },
+  { rank: 5, name: 'virattt/dexter', link: 'https://github.com/virattt/dexter', description: 'An autonomous agent for deep financial research', keywords: ['AI Agent', 'Finance', 'TypeScript'], totalStars: '24,979', growth: '841', growthValue: 841 },
+  { rank: 6, name: 'soxoj/maigret', link: 'https://github.com/soxoj/maigret', description: 'Collect a dossier on a person by username', keywords: ['Python'], totalStars: '26,861', growth: '456', growthValue: 456 },
+  { rank: 7, name: '1jehuang/jcode', link: 'https://github.com/1jehuang/jcode', description: 'Coding Agent Harness', keywords: ['AI Agent', 'Rust'], totalStars: '5,239', growth: '389', growthValue: 389 },
+  { rank: 8, name: 'cocoindex-io/cocoindex', link: 'https://github.com/cocoindex-io/cocoindex', description: 'Incremental engine for long horizon agents', keywords: ['AI Agent', 'Python'], totalStars: '9,248', growth: '278', growthValue: 278 },
+  { rank: 9, name: 'AIDC-AI/Pixelle-Video', link: 'https://github.com/AIDC-AI/Pixelle-Video', description: 'AI全自动短视频引擎', keywords: ['AI', 'Python'], totalStars: '14,042', growth: '512', growthValue: 512 },
+  { rank: 10, name: 'mattpocock/skills', link: 'https://github.com/mattpocock/skills', description: 'Skills for Real Engineers', keywords: ['Claude', 'Shell'], totalStars: '67,500', growth: '1,204', growthValue: 1204 },
+];
+
 export function loadSampleData(): TrendingData {
   return {
     weekly: SAMPLE_WEEKLY,
     monthly: SAMPLE_MONTHLY,
-    lastUpdated: '2026-05-09 21:02'
+    daily: SAMPLE_DAILY,
+    lastUpdated: '2026-05-12 22:00'
   };
 }
