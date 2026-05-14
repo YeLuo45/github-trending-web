@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Header, TabButton, ProjectList, FavoritesPanel, SharedListView, FollowedAuthorsPanel, RecommendationsPanel, TopicTrackingPanel, ReportsPanel, CommentsPanel, SharePoster, NotificationCenter, AdvancedFilterBar, applyFilters, TopicTrendingView } from './components';
+import { Header, TabButton, ProjectList, FavoritesPanel, SharedListView, FollowedAuthorsPanel, RecommendationsPanel, TopicTrackingPanel, ReportsPanel, CommentsPanel, SharePoster, NotificationCenter, AdvancedFilterBar, applyFilters, TopicTrendingView, MobileDrawerNav, ExportPanel } from './components';
 import type { FilterState } from './components/AdvancedFilterBar';
 import { loadTrendingFromFiles, loadSampleData } from './utils/loadData';
 import type { TrendingData, FavoriteItem } from './types';
@@ -50,6 +50,21 @@ function App() {
   const [commentsProject, setCommentsProject] = useState<string | null>(null);
   const [sharePosterProjects, setSharePosterProjects] = useState<FavoriteItem[] | null>(null);
   const [showNotificationCenter, setShowNotificationCenter] = useState(false);
+
+  // Mobile drawer & Export
+  const [showMobileNav, setShowMobileNav] = useState(false);
+  const [showExport, setShowExport] = useState(false);
+
+  // Social counts for mobile drawer (mirror Header logic)
+  const [favoritesCount] = useState(() => {
+    try { return JSON.parse(localStorage.getItem('favorites') || '[]').length; } catch { return 0; }
+  });
+  const [followedCount] = useState(() => {
+    try { return JSON.parse(localStorage.getItem('followed_authors') || '[]').length; } catch { return 0; }
+  });
+  const [unreadNotifications] = useState(() => {
+    try { return JSON.parse(localStorage.getItem('notifications') || '[]').filter((n: { read?: boolean }) => !n.read).length; } catch { return 0; }
+  });
 
   // Advanced filtering & view modes
   const [viewMode, setViewMode] = useState<'list' | 'topic'>('list');
@@ -289,6 +304,8 @@ function App() {
           onShowTopicTracking={() => setShowTopicTracking(true)}
           onShowReports={() => setShowReports(true)}
           onShowNotificationCenter={() => setShowNotificationCenter(true)}
+          onShowMobileNav={() => setShowMobileNav(true)}
+          onShowExport={() => setShowExport(true)}
         />
 
         {/* Tabs */}
@@ -569,6 +586,31 @@ function App() {
             )}
           </div>
         </div>
+      )}
+
+      {/* Mobile Drawer Nav */}
+      <MobileDrawerNav
+        isOpen={showMobileNav}
+        onClose={() => setShowMobileNav(false)}
+        title="Menu"
+        items={[
+          { icon: '⭐', label: '收藏夹', badge: favoritesCount, onClick: () => { setShowMobileNav(false); setShowFavorites(true); } },
+          { icon: '👁', label: '关注的作者', badge: followedCount, onClick: () => { setShowMobileNav(false); setShowFollowedAuthors(true); } },
+          { icon: '📋', label: 'Fork 历史', badge: forkHistory.length, onClick: () => { setShowMobileNav(false); setShowHistory(true); } },
+          { icon: '🏷', label: '话题追踪', onClick: () => { setShowMobileNav(false); setShowTopicTracking(true); } },
+          { icon: '📊', label: '报告中心', onClick: () => { setShowMobileNav(false); setShowReports(true); } },
+          { icon: '🎯', label: '智能推荐', onClick: () => { setShowMobileNav(false); setShowRecommendations(true); } },
+          { icon: '🔔', label: '通知中心', badge: unreadNotifications, onClick: () => { setShowMobileNav(false); setShowNotificationCenter(true); } },
+          { icon: '📥', label: '导出数据', onClick: () => { setShowMobileNav(false); setShowExport(true); } },
+        ]}
+      />
+
+      {/* Export Panel */}
+      {showExport && data && (
+        <ExportPanel
+          projects={filteredProjects}
+          onClose={() => setShowExport(false)}
+        />
       )}
     </div>
   );

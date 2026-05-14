@@ -4,6 +4,8 @@ import { getGhToken, fetchGhUser } from '../utils/github';
 import { Settings } from './Settings';
 import { getFavorites, getFollowedAuthors, getNewProjectsFromFollowedAuthors, getUnreadNotificationCount } from '../utils/social';
 import type { TrendingProject } from '../types';
+import { ThemeToggle } from './ThemeToggle';
+import { LanguageToggle } from './LanguageToggle';
 
 interface HeaderProps {
   lastUpdated: string;
@@ -18,6 +20,8 @@ interface HeaderProps {
   onShowTopicTracking?: () => void;
   onShowReports?: () => void;
   onShowNotificationCenter?: () => void;
+  onShowMobileNav?: () => void;
+  onShowExport?: () => void;
 }
 
 export function Header({
@@ -27,6 +31,7 @@ export function Header({
   onShowFavorites, onShowFollowedAuthors,
   onShowRecommendations, onShowTopicTracking, onShowReports,
   onShowNotificationCenter,
+  onShowMobileNav, onShowExport,
 }: HeaderProps) {
   const [showSettings, setShowSettings] = useState(false);
   const [favoritesCount, setFavoritesCount] = useState(0);
@@ -75,19 +80,45 @@ export function Header({
             </p>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
+            {/* Mobile menu button - only shows on mobile */}
+            <button
+              onClick={onShowMobileNav}
+              className="show-mobile-only flex items-center gap-2 px-3 py-2 bg-github-card border border-github-border rounded hover:border-github-purple/50 transition-colors"
+            >
+              <span>☰</span>
+              <span className="text-github-muted text-xs">菜单</span>
+            </button>
+
+            {/* Theme & Language toggles - hide on mobile */}
+            <div className="hide-mobile flex items-center gap-2">
+              <ThemeToggle />
+              <LanguageToggle />
+            </div>
+
             {lastUpdated && (
-              <div className="text-right">
+              <div className="text-right hide-mobile">
                 <p className="text-github-muted text-xs">最后更新</p>
                 <p className="text-github-purple text-sm font-medium">{lastUpdated}</p>
               </div>
             )}
 
-            {/* Favorites Button */}
+            {/* Export button - hide on mobile */}
+            {onShowExport && (
+              <button
+                onClick={onShowExport}
+                className="hide-mobile flex items-center gap-2 px-3 py-2 bg-github-card border border-github-border rounded hover:border-github-purple/50 transition-colors"
+              >
+                <span>📥</span>
+                <span className="text-github-muted text-xs">导出</span>
+              </button>
+            )}
+
+            {/* Favorites Button - hide on mobile */}
             {onShowFavorites && (
               <button
                 onClick={onShowFavorites}
-                className="flex items-center gap-2 px-3 py-2 bg-github-card border border-github-border rounded hover:border-github-purple/50 transition-colors"
+                className="hide-mobile flex items-center gap-2 px-3 py-2 bg-github-card border border-github-border rounded hover:border-github-purple/50 transition-colors"
               >
                 <span>⭐</span>
                 <span className="text-github-muted text-xs">收藏</span>
@@ -99,11 +130,11 @@ export function Header({
               </button>
             )}
 
-            {/* Followed Authors Button */}
+            {/* Followed Authors Button - hide on mobile */}
             {onShowFollowedAuthors && (
               <button
                 onClick={onShowFollowedAuthors}
-                className="flex items-center gap-2 px-3 py-2 bg-github-card border border-github-border rounded hover:border-github-purple/50 transition-colors relative"
+                className="hide-mobile flex items-center gap-2 px-3 py-2 bg-github-card border border-github-border rounded hover:border-github-purple/50 transition-colors relative"
               >
                 <span>👁</span>
                 <span className="text-github-muted text-xs">关注</span>
@@ -121,11 +152,11 @@ export function Header({
               </button>
             )}
 
-            {/* Fork History Button */}
+            {/* Fork History Button - hide on mobile */}
             {onShowHistory && (
               <button
                 onClick={onShowHistory}
-                className="flex items-center gap-2 px-3 py-2 bg-github-card border border-github-border rounded hover:border-github-purple/50 transition-colors"
+                className="hide-mobile flex items-center gap-2 px-3 py-2 bg-github-card border border-github-border rounded hover:border-github-purple/50 transition-colors"
               >
                 <span>📋</span>
                 <span className="text-github-muted text-xs">历史</span>
@@ -137,44 +168,44 @@ export function Header({
               </button>
             )}
 
-            {/* Topic Tracking Button */}
+            {/* Topic Tracking Button - hide on mobile */}
             {onShowTopicTracking && (
               <button
                 onClick={onShowTopicTracking}
-                className="flex items-center gap-2 px-3 py-2 bg-github-card border border-github-border rounded hover:border-github-purple/50 transition-colors"
+                className="hide-mobile flex items-center gap-2 px-3 py-2 bg-github-card border border-github-border rounded hover:border-github-purple/50 transition-colors"
               >
                 <span>🏷</span>
                 <span className="text-github-muted text-xs">话题</span>
               </button>
             )}
 
-            {/* Reports Button */}
+            {/* Reports Button - hide on mobile */}
             {onShowReports && (
               <button
                 onClick={onShowReports}
-                className="flex items-center gap-2 px-3 py-2 bg-github-card border border-github-border rounded hover:border-github-purple/50 transition-colors"
+                className="hide-mobile flex items-center gap-2 px-3 py-2 bg-github-card border border-github-border rounded hover:border-github-purple/50 transition-colors"
               >
                 <span>📊</span>
                 <span className="text-github-muted text-xs">报告</span>
               </button>
             )}
 
-            {/* Recommendations Button */}
+            {/* Recommendations Button - hide on mobile */}
             {onShowRecommendations && (
               <button
                 onClick={onShowRecommendations}
-                className="flex items-center gap-2 px-3 py-2 bg-github-card border border-github-border rounded hover:border-github-purple/50 transition-colors"
+                className="hide-mobile flex items-center gap-2 px-3 py-2 bg-github-card border border-github-border rounded hover:border-github-purple/50 transition-colors"
               >
                 <span>🎯</span>
                 <span className="text-github-muted text-xs">推荐</span>
               </button>
             )}
 
-            {/* Notification Center Button */}
+            {/* Notification Center Button - hide on mobile */}
             {onShowNotificationCenter && (
               <button
                 onClick={onShowNotificationCenter}
-                className="flex items-center gap-2 px-3 py-2 bg-github-card border border-github-border rounded hover:border-github-purple/50 transition-colors relative"
+                className="hide-mobile flex items-center gap-2 px-3 py-2 bg-github-card border border-github-border rounded hover:border-github-purple/50 transition-colors relative"
               >
                 <span>🔔</span>
                 <span className="text-github-muted text-xs">通知</span>
