@@ -267,22 +267,6 @@ function App() {
     return <SharedListView shareId={shareId} />;
   }
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-github-dark">
-        <div className="text-github-purple text-lg">翻译中...</div>
-      </div>
-    );
-  }
-
-  if (!data) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-github-dark">
-        <div className="text-github-muted">暂无数据</div>
-      </div>
-    );
-  }
-
   const allProjects = activeTab === 'weekly' ? data.weekly : activeTab === 'monthly' ? data.monthly : (data.daily || []);
 
   // Apply advanced filters to projects
@@ -618,9 +602,8 @@ function App() {
           onClose={() => setShowExport(false)}
         />
       )}
-            </div>
-          </div>
-        </ErrorBoundary>
+        </div>
+      </ErrorBoundary>
       )}
     </>
   );
