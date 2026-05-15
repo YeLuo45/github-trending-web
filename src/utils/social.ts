@@ -23,15 +23,30 @@ export function addFavorite(project: Omit<FavoriteItem, 'starredAt'>): boolean {
   const favorites = getFavorites();
   if (favorites.length >= MAX_FAVORITES) return false;
   if (favorites.some(f => f.name === project.name)) return false;
-  
+
   favorites.unshift({ ...project, starredAt: new Date().toLocaleString() });
   localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
+  addNotification({
+    type: 'system',
+    title: '⭐ 已收藏',
+    message: `收藏了项目 ${project.name}`,
+    link: project.link,
+  });
   return true;
 }
 
 export function removeFavorite(name: string): void {
-  const favorites = getFavorites().filter(f => f.name !== name);
-  localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
+  const favorites = getFavorites();
+  const removed = favorites.find(f => f.name === name);
+  const filtered = favorites.filter(f => f.name !== name);
+  localStorage.setItem(FAVORITES_KEY, JSON.stringify(filtered));
+  if (removed) {
+    addNotification({
+      type: 'system',
+      title: '☆ 已取消收藏',
+      message: `取消收藏了项目 ${name}`,
+    });
+  }
 }
 
 export function isFavorited(name: string): boolean {
@@ -102,9 +117,14 @@ export function followAuthor(username: string): boolean {
   const authors = getFollowedAuthors();
   if (authors.length >= MAX_FOLLOWED_AUTHORS) return false;
   if (authors.some(a => a.username.toLowerCase() === username.toLowerCase())) return false;
-  
+
   authors.unshift({ username, followedAt: new Date().toLocaleString() });
   localStorage.setItem(FOLLOWED_AUTHORS_KEY, JSON.stringify(authors));
+  addNotification({
+    type: 'follow',
+    title: '👁 关注了作者',
+    message: `成功关注作者 ${username}`,
+  });
   return true;
 }
 
@@ -113,6 +133,11 @@ export function unfollowAuthor(username: string): void {
     a => a.username.toLowerCase() !== username.toLowerCase()
   );
   localStorage.setItem(FOLLOWED_AUTHORS_KEY, JSON.stringify(authors));
+  addNotification({
+    type: 'follow',
+    title: '👁 已取消关注',
+    message: `取消关注作者 ${username}`,
+  });
 }
 
 export function isFollowing(username: string): boolean {

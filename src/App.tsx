@@ -6,7 +6,7 @@ import type { TrendingData, FavoriteItem } from './types';
 import type { GhUser } from './types';
 import { getGhToken, forkRepo, parseRepoInfo, syncForkHistory, type ForkHistoryRecord } from './utils/github';
 import { translateDescriptions } from './utils/translation';
-import { getFavorites, createSharedList, getNewProjectsFromFollowedAuthors } from './utils/social';
+import { getFavorites, createSharedList, getNewProjectsFromFollowedAuthors, addNotification } from './utils/social';
 
 // Lazy-loaded heavy panels (code-split)
 const FavoritesPanel = lazy(() => import('./components/FavoritesPanel'));
@@ -198,13 +198,17 @@ function App() {
       const info = parseRepoInfo(project.link);
       if (!info) {
         results.push({ name: project.name, success: false, error: '无法解析仓库信息' });
+        addNotification({ type: 'fork', title: '⎈ Fork 失败', message: `${project.name}: 无法解析仓库信息` });
         continue;
       }
       const result = await forkRepo(info.owner, info.repo, token);
       results.push({ name: project.name, ...result });
       if (result.success && result.url) {
         addToForkHistory({ name: project.name, link: project.link, description: project.description, url: result.url });
+        addNotification({ type: 'fork', title: '⎈ Fork 成功', message: `成功 Fork ${project.name}`, link: result.url });
         window.open(result.url, '_blank');
+      } else {
+        addNotification({ type: 'fork', title: '⎈ Fork 失败', message: `${project.name}: ${result.error || '未知错误'}` });
       }
       await new Promise(r => setTimeout(r, 500));
     }
