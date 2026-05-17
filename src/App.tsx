@@ -144,9 +144,9 @@ function App() {
   useEffect(() => {
     if (data) {
       const allProjects = [
-        ...data.weekly,
-        ...data.monthly,
-        ...(data.daily || []),
+        ...safeData.weekly,
+        ...safeData.monthly,
+        ...(safeData.daily || []),
       ];
       const newProjects = getNewProjectsFromFollowedAuthors(allProjects);
       const map = new Map<string, { name: string; link: string }[]>();
@@ -285,7 +285,8 @@ function App() {
     );
   }
 
-  const allProjects = activeTab === 'weekly' ? data.weekly : activeTab === 'monthly' ? data.monthly : (data.daily || []);
+  const safeData = data ?? { weekly: [], monthly: [], daily: [], lastUpdated: '' };
+  const allProjects = activeTab === 'weekly' ? safeData.weekly : activeTab === 'monthly' ? safeData.monthly : (safeData.daily || []);
 
   // Apply advanced filters to projects
   const filteredProjects = applyFilters(allProjects, filters);
@@ -299,13 +300,13 @@ function App() {
           <div className="min-h-screen bg-github-dark">
             <div className="max-w-4xl mx-auto px-4 py-8">
               <Header
-                lastUpdated={data.lastUpdated}
+                lastUpdated={safeData.lastUpdated}
                 ghUser={ghUser}
                 onGhUserChange={setGhUser}
                 forkHistoryCount={forkHistory.length}
                 onForkHistorySync={setForkHistory}
                 onShowHistory={() => setShowHistory(true)}
-                projects={[...data.weekly, ...data.monthly, ...(data.daily || [])]}
+                projects={[...safeData.weekly, ...safeData.monthly, ...(safeData.daily || [])]}
                 onShowFavorites={() => setShowFavorites(true)}
                 onShowFollowedAuthors={() => setShowFollowedAuthors(true)}
                 onShowRecommendations={() => setShowRecommendations(true)}
@@ -486,7 +487,7 @@ function App() {
       {showRecommendations && (
         <Suspense fallback={<div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50"><div className="text-github-text">加载中...</div></div>}>
           <RecommendationsPanel
-            allProjects={[...data.weekly, ...data.monthly, ...(data.daily || [])]}
+            allProjects={[...safeData.weekly, ...safeData.monthly, ...(safeData.daily || [])]}
             onClose={() => setShowRecommendations(false)}
           />
         </Suspense>
@@ -496,7 +497,7 @@ function App() {
       {showTopicTracking && (
         <Suspense fallback={<div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50"><div className="text-github-text">加载中...</div></div>}>
           <TopicTrackingPanel
-            allProjects={[...data.weekly, ...data.monthly, ...(data.daily || [])]}
+            allProjects={[...safeData.weekly, ...safeData.monthly, ...(safeData.daily || [])]}
             onClose={() => setShowTopicTracking(false)}
             onShowRecommendations={() => {
               setShowTopicTracking(false);
@@ -510,8 +511,8 @@ function App() {
       {showReports && (
         <Suspense fallback={<div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50"><div className="text-github-text">加载中...</div></div>}>
           <ReportsPanel
-            weeklyProjects={data.weekly}
-            dailyProjects={data.daily || []}
+            weeklyProjects={safeData.weekly}
+            dailyProjects={safeData.daily || []}
             onClose={() => setShowReports(false)}
           />
         </Suspense>
